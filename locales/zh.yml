@@ -151,6 +151,10 @@ tools:
     title: 加密/解密文本
     description: 使用加密算法（如AES、TripleDES、Rabbit或RC4）加密和解密文本明文。
 
+  customEncryption:
+    title: 自定义解密文本并格式化
+    description: 使用加密算法解密文本明文。
+
   random-port-generator:
     title: 随机端口生成
     description: 生成“已知”端口范围（0-1023）之外的随机端口号。
