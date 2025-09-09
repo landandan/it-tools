@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && NODE_OPTIONS=--max_old_space_size=4096 vite build",
+    "build": "vue-tsc --noEmit && cross-env NODE_OPTIONS=--max_old_space_size=4096 vite build",
     "preview": "vite preview --port 5050",
     "test": "npm run test:unit",
     "test:unit": "vitest --environment jsdom",
@@ -59,6 +59,7 @@
     "country-code-lookup": "^0.1.0",
     "cron-validator": "^1.3.1",
     "cronstrue": "^2.26.0",
+    "cross-env": "^10.0.0",
     "crypto-js": "^4.1.1",
     "date-fns": "^2.29.3",
     "dompurify": "^3.0.6",
