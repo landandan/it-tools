@@ -44,6 +44,13 @@ const [customDecryptOutput, customDecryptError] = computedCatch(() => {
   defaultErrorMessage: 'Unable to decrypt your text',
 });
 
+// 定义一个函数用于去除字符串中所有空格
+function removeAllSpaces(e: any) {
+  // console.log('🚀 ~ removeAllSpaces ~ str:', e);
+  // 使用正则表达式匹配所有空白字符并替换为空
+  customDecryptInput.value = e.target.value.replace(/\s+/g, '');
+}
+
 function isJsonString(str: string) {
   // 首先检查是否为字符串类型
   if (typeof str !== 'string') {
@@ -104,6 +111,7 @@ function syncJSONString() {
           placeholder="The string to cypher"
           rows="4"
           multiline raw-text monospace autosize mt-5
+          @input="removeAllSpaces"
         />
       </div>
       <div style="flex: 1">
