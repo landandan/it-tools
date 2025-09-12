@@ -102,30 +102,34 @@ function syncJSONString() {
 
 <template>
   <div style="flex: 0 0 100%">
-    <div flex>
-      <div style="flex: 1">
-        <c-input-text v-model:value="customDecryptSecret" label="Your secret key:" clearable raw-text />
-        <c-input-text
-          v-model:value="customDecryptInput"
-          label="Your encrypted text:"
-          placeholder="The string to cypher"
-          rows="4"
-          multiline raw-text monospace autosize mt-5
-          @input="removeAllSpaces"
-        />
-      </div>
-      <div style="flex: 1">
-        <c-alert v-if="customDecryptError" type="error" mt-12 title="Error while decrypting">
-          {{ customDecryptError }}
-        </c-alert>
-        <c-input-text
-          v-else
-          label="Your decrypted text:"
-          :value="customDecryptOutputStr"
-          placeholder="Your string hash"
-          rows="3"
-          multiline monospace readonly autosize mt-5
-        />
+    <div>
+      <c-input-text v-model:value="customDecryptSecret" label="Your secret key:" clearable raw-text />
+      <div flex>
+        <div style="flex: 1">
+          <c-input-text
+            v-model:value="customDecryptInput"
+            label="Your encrypted text:"
+            placeholder="The string to cypher"
+            rows="4"
+            multiline raw-text monospace autosize mt-5
+            @input="removeAllSpaces"
+            style="max-height: 600px; overflow-y: auto;"
+          />
+        </div>
+        <div style="flex: 1">
+          <c-alert v-if="customDecryptError" type="error" mt-12 title="Error while decrypting">
+            {{ customDecryptError }}
+          </c-alert>
+          <c-input-text
+            v-else
+            label="Your decrypted text:"
+            :value="customDecryptOutputStr"
+            placeholder="Your string hash"
+            rows="4"
+            multiline monospace readonly autosize mt-5
+            style="max-height: 600px; overflow-y: auto;"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -152,7 +156,7 @@ function syncJSONString() {
       ref="inputElement"
       v-model:value="rawJson"
       placeholder="Paste your raw JSON here..."
-      rows="20"
+      rows="35"
       multiline
       autocomplete="off"
       autocorrect="off"
