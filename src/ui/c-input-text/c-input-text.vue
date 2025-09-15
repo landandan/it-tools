@@ -96,9 +96,12 @@ function resizeTextarea() {
     return;
   }
 
+  textareaRef.value.style.height = 'auto';
+
   const scrollHeight = textareaRef.value.scrollHeight + 2;
 
   inputWrapperRef.value.style.height = `${scrollHeight}px`;
+  textareaRef.value.style.height = `${scrollHeight}px`;
 }
 
 const htmlInputType = computed(() => {

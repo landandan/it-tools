@@ -156,13 +156,13 @@ function syncJSONString() {
       ref="inputElement"
       v-model:value="rawJson"
       placeholder="Paste your raw JSON here..."
-      rows="35"
       multiline
       autocomplete="off"
       autocorrect="off"
       autocapitalize="off"
       spellcheck="false"
       monospace
+      autosize
     />
   </n-form-item>
   <n-form-item label="Prettified version of your JSON">
