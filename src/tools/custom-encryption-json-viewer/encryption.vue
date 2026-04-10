@@ -98,6 +98,10 @@ function extractRequestBodyJson(str: string) {
 function syncJSONString() {
   rawJson.value = isJsonString(customDecryptOutputStr.value) ? customDecryptOutputStr.value : extractRequestBodyJson(customDecryptOutputStr.value);
 }
+
+function clearJSONString() {
+  rawJson.value = '';
+}
 </script>
 
 <template>
@@ -143,6 +147,9 @@ function syncJSONString() {
       </n-form-item>
       <c-button @click="syncJSONString">
         同步JSON
+      </c-button>
+      <c-button @click="clearJSONString">
+        清除JSON
       </c-button>
     </div>
   </div>
