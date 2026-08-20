@@ -225,6 +225,9 @@ tools:
   docker-run-to-docker-compose-converter:
     title: Chuyển đổi lệnh docker run thành tệp docker-compose
     description: Chuyển đổi các lệnh docker run thành tệp docker-compose!
+  docker-compose-prettify:
+    title: Làm đẹp và định dạng Docker Compose
+    description: Làm đẹp và định dạng cấu hình docker-compose của bạn với thụt lề có thể điều chỉnh, sắp xếp khóa và tải xuống docker-compose.yml chỉ bằng một cú nhấp chuột.
 
   mac-address-lookup:
     title: Tra cứu địa chỉ MAC

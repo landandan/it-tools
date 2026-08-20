@@ -236,6 +236,9 @@ tools:
   docker-run-to-docker-compose-converter:
     title: Docker run to Docker compose converter
     description: Transforms "docker run" commands into docker-compose files!
+  docker-compose-prettify:
+    title: Docker Compose beautify and format
+    description: Beautify and format your docker-compose configuration with adjustable indentation, key sorting and one-click download of docker-compose.yml.
 
   mac-address-lookup:
     title: MAC address lookup
