@@ -26,6 +26,7 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+.workbuddy
 
 .env
 /test-results/
@@ -33,3 +34,5 @@ coverage
 /playwright/.cache/
 # Webkit with playwright creates a salt file
 salt
+
+*.tsbuildinfo
