@@ -1,11 +1,19 @@
 import type { GlobalThemeOverrides } from 'naive-ui';
 
 export const lightThemeOverrides: GlobalThemeOverrides = {
+  common: {
+    primaryColor: '#2d8b8bFF',
+    primaryColorHover: '#34a0a0FF',
+    primaryColorPressed: '#236e6eFF',
+    primaryColorSuppl: '#34a0a0FF',
+    borderRadius: '8px',
+  },
+
   Menu: {
     itemHeight: '32px',
   },
 
-  Layout: { color: '#f1f5f9' },
+  Layout: { color: '#f1faee' },
 
   AutoComplete: {
     peers: {
@@ -16,19 +24,20 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
 
 export const darkThemeOverrides: GlobalThemeOverrides = {
   common: {
-    primaryColor: '#1ea54cFF',
-    primaryColorHover: '#36AD6AFF',
-    primaryColorPressed: '#0C7A43FF',
-    primaryColorSuppl: '#36AD6AFF',
+    primaryColor: '#35a3a3FF',
+    primaryColorHover: '#46b6b6FF',
+    primaryColorPressed: '#297e7eFF',
+    primaryColorSuppl: '#46b6b6FF',
+    borderRadius: '8px',
   },
 
   Notification: {
-    color: '#333333',
+    color: '#243040',
   },
 
   AutoComplete: {
     peers: {
-      InternalSelectMenu: { height: '500px', color: '#1e1e1e' },
+      InternalSelectMenu: { height: '500px', color: '#1c2632' },
     },
   },
 
@@ -37,18 +46,18 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
 
   Layout: {
-    color: '#1c1c1c',
-    siderColor: '#232323',
+    color: '#161e29',
+    siderColor: '#1c2632',
     siderBorderColor: 'transparent',
   },
 
   Card: {
-    color: '#232323',
-    borderColor: '#282828',
+    color: '#222e3c',
+    borderColor: '#2c3a4a',
   },
 
   Table: {
-    tdColor: '#232323',
-    thColor: '#353535',
+    tdColor: '#222e3c',
+    thColor: '#2a3744',
   },
 };
