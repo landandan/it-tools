@@ -109,12 +109,24 @@ function formatYaml({
   sortKeys?: MaybeRef<boolean>
   indentSize?: MaybeRef<number>
 }) {
-  const parsedYaml = yaml.parse(normalizeYamlIndentation(get(rawYaml)));
+  const normalized = normalizeYamlIndentation(get(rawYaml));
 
-  const formattedYAML = yaml.stringify(parsedYaml, {
+  // Prefer the strict parse (canonical, comment-stripping). Tabs, Unicode spaces
+  // and the aligned sequence-mapping form are already repaired by
+  // normalizeYamlIndentation; the few remaining parser hiccups are usually
+  // recoverable, so we fall back to the lenient Document parser and format them
+  // into valid YAML instead of bailing out with empty output. This keeps the tool
+  // "prettify first, prompt only for real config problems".
+  let parsed: unknown;
+  try {
+    parsed = yaml.parse(normalized);
+  }
+  catch {
+    parsed = yaml.parseDocument(normalized).toJS();
+  }
+
+  return yaml.stringify(parsed, {
     sortMapEntries: get(sortKeys),
     indent: get(indentSize),
   });
-
-  return formattedYAML;
 }
